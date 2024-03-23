@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoviePicker</title>
+    <!-- <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    > -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/main.js"></script>
 </head>
 <body style="text-align: center;">
     <h3>Valéria eu te AMO</h3>
@@ -12,50 +18,11 @@
     <h6 id="movieYear"></h6>
     <h3 id="movieStreaming">Veja onde está disponível</h3>
 
-    <button onclick="onClickSelectMovie()">Me diz um filme!</button>
+    <button id="btn_filme">Me diz um filme!</button>
     <script>
-        const movies = [
-            
-            {
-                id: 1,
-                name: "Velozes e Furiosos X",
-                streaming: "YouTube",
-                year: "2023"
-            },
-            {
-                id: 2,
-                name: "Healer",
-                streaming: "Netflix",
-                year: "2014"
-            },
-            {
-                id: 3,
-                name: "One Piece - East Blue Saga",
-                streaming: "Netflix",
-                year: "1993"
-            },
-            {
-                id: 4,
-                name: "Meu Amigo Totoro",
-                streaming: "Netflix",
-                year: "1988"
-            },
-        
-        ]
-
-        function onClickSelectMovie() {
-            let movieTitle = document.getElementById('movieTitle')
-            let movieYear = document.getElementById('movieYear')
-            let movieStreaming = document.getElementById('movieStreaming')
-
-            let maxLenght = movies.length + 1;
-            let randomId = Math.floor(Math.random() * (maxLenght - 1) + 1)
-            let movie = movies[randomId - 1];
-
-            movieTitle.innerHTML = movie.name;
-            movieYear.innerHTML = movie.year;
-            movieStreaming.innerHTML = movie.streaming;
-        }
+        $(document).ready(
+            MainApi.init()
+        )
     </script>
 </body>
 </html>
